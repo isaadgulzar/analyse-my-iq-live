@@ -144,7 +144,7 @@
             </button>
         </div>
         <!-- Question Explorer -->
-        <div x-data="{questions: false}" :class="{'fixed z-10 bottom-0 bg-dark-blue': questions,'flex-shrink lg:pt-2 bg-dark-blue': !questions}">
+        <div x-data="{questions: false}" :class="{'fixed z-10 bottom-0 bg-dark-blue': questions,'flex-shrink-0 lg:pt-2 bg-dark-blue': !questions}">
             <a @click.prevent="questions = !questions" href="#" class="flex lg:hidden items-center justify-between p-2 bg-dark-blue">
                 <span class="text-base text-purple-lightest">Question Explorer</span>
                 <svg xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': questions}" class="h-6 w-6 text-purple-lightest transform transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
