@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <link rel="stylesheet" href="./css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -12,10 +13,17 @@
 </head>
 
 <body>
-    <div class="max-w-7xl mx-auto flex flex-col justify-between h-screen pb-14 md:pb-10 lg:pb-0 font-inter">
+    <!-- THIS WILL SHOW ON THE WRONG ORIENTATION -->
+    <!-- <div id="turn" class="fixed z-50 h-full w-full bg-white">
+        <p class="flex flex-col h-full justify-center items-center space-y-3">
+            <img class="h-10 w-10 transform rotate-45" src="./assets/images/rotate.png" alt="">
+            <span class="text-purple">Please rotate your device!</span>
+        </p>
+    </div> -->
+    <div class="flex flex-col justify-between h-screen pb-28 md:pb-48 lg:pb-0 font-inter">
         <!-- Top bar  -->
         <nav class="bg-dark-blue flex-shrink-0 h-16 px-2">
-            <div class="relative flex items-center justify-between space-x-3 md:space-x-7 h-16">
+            <div class="max-w-7xl mx-auto relative flex items-center justify-between space-x-3 md:space-x-7 h-16">
                 <div class="flex-shrink-0">
                     <img class="h-4 md:h-7 w-auto" src="./assets/images/AnalyseMyIQ.png" alt="Workflow">
                 </div>
@@ -61,7 +69,7 @@
             </div>
         </nav>
         <!-- Instructions  -->
-        <div class="flex-shrink-0 h-7 md:h-auto flex flex-col md:flex-row items-center justify-center py-1.5 md:py-5">
+        <div class="max-w-7xl mx-auto flex-shrink-0 h-7 md:h-auto flex flex-col md:flex-row items-center justify-center py-1.5 md:py-5">
             <h1 class="flex space-x-1 text-xs md:text-2xl font-bold text-purple-light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 md:h-7 w-4 md:w-7" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
@@ -70,14 +78,14 @@
             </h1>
         </div>
         <!-- content -->
-        <div class="flex-shrink h-full w-full flex flex-col lg:grid lg:grid-cols-2 gap-3 lg:gap-5 items-center justify-center px-2">
-            <div style="background: url(./assets/images/q1.png);" class="question h-1/2 lg:h-full flex-shrink w-full relative flex items-center justify-center border border-grey rounded-md 2xl:h-72">
+        <div class="max-w-7xl mx-auto flex-shrink h-full w-full flex flex-col lg:grid lg:grid-cols-2 gap-3 lg:gap-5 items-center justify-center px-2">
+            <div style="background: url(./assets/images/q1.png);" class="question h-1/2 lg:h-4/5 xl:h-full 2xl:h-5/6 flex-shrink w-full relative flex items-center justify-center border border-grey rounded-md">
                 <span class="absolute left-1.5 md:left-3 top-1.5 md:top-3 text-dark-blue bg-purple-lighter font-medium text-sm md:text-lg border h-7 md:h-10 p-1.5 md:p-3 flex justify-center items-center">
                     Question # <span>3</span>
                 </span>
                 <!-- <p class="text-base md:text-xl"> What's 50% of 500, divided by 5?</p> -->
             </div>
-            <div class="h-1/2 lg:h-full w-full grid grid-cols-3 gap-2 lg:gap-5 lg:items-center lg:justify-between 2xl:h-72">
+            <div class="h-1/2 lg:h-4/5 xl:h-full 2xl:h-5/6 w-full grid grid-cols-3 gap-2 lg:gap-5 lg:items-center lg:justify-between">
                 <div style="background: url(./assets/images/a1_1.png);" class="answer flex flex-wrap items-center h-full border border-grey rounded-md">
                     <input id="checkbox1" type="radio" name="q1" class="hidden">
                     <label for="checkbox1" class="relative flex items-center justify-center md:space-x-5 h-full w-full cursor-pointer px-1.5 md:px-4 py-1.5 md:py-5">
@@ -135,7 +143,7 @@
             </div>
         </div>
         <!-- Action Buttons  -->
-        <div class="flex-shrink-0 h-10 md:h-auto grid grid-cols-2 gap-2 lg:gap-5 items-center justify-center px-2 py-2.5 lg:py-5">
+        <div class="max-w-7xl mx-auto w-full flex-shrink-0 h-10 md:h-auto grid grid-cols-2 gap-2 lg:gap-5 items-center justify-center px-2 py-2.5 lg:py-5">
             <button class="btn-purple shadow-purple py-1.5 md:py-3.5 px-5 md:px-12">
                 Skip Question
             </button>
@@ -151,7 +159,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
             </a>
-            <div :class="{'hidden lg:block': !questions}">
+            <div class="max-w-7xl mx-auto" :class="{'hidden lg:block': !questions}">
                 <nav class="quiz-num-counter flex flex-wrap items-center justify-center gap-2 py-2 px-2 lg:px-0" aria-label="Pagination">
                     <a href="#" aria-current="page" class="skipped">
                         1
